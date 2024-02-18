@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av kinobillett</title>
+    <script src="script.js"></script>
+    <style> /* Styling av error meldingene så de blir tydelige*/
+        .errorMelding{
+            color : red;
+        }
+    </style>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+<table>
+    <tr>
+        <td>Velg Film</td>
+        <td>
+            <select id="filmer" onchange="chooseFilm()">
+                <option>Velg film her</option>
+                <option>Star Wars: Revenge of the Sith</option>
+                <option>Interstellar</option>
+                <option>Lord of the Rings</option>
+            </select>
+            <span class="errorMelding" id="ErrorFilm"></span></td>
+    </tr> <!-- I denne tabellen så setter jeg id for både inputen og errormeldingen slik at dette dukker opp riktig på nettsiden-->
+    <tr><td>Antall</td>
+        <td><input type="number" id="antall" required>
+            <span class="errorMelding" id="ErrorAntall"></span>
+        </td>
+    </tr>
+    <tr><td>Fornavn</td>
+        <td><input type="text" id="fnavn" required>
+            <span class="errorMelding" id="ErrorFnavn"></span>
+        </td>
+    </tr>
+    <tr><td>Etternavn</td>
+        <td><input type="text" id="enavn" required>
+            <span class="errorMelding" id="ErrorEnavn"></span>
+        </td>
+    </tr>
+    <tr><td>Telefonnr</td>
+        <td><input type="number" id="telefonnr" required>
+            <span class="errorMelding" id="ErrorTelefonnr">
+
+            </span>
+        </td>
+    </tr>
+    <tr><td>Epost</td>
+        <td><input type="email" id="epost" required>
+            <span class="errorMelding" id="ErrorEpost"></span>
+            <span class="errorMelding" id="EpostValidation"></span>
+        </td>
+    </tr>
+    <tr><td><button onclick="KjopRegistrer()">Kjøp billett</button>
+    </td>
+    </tr>
+</table>
+<h2>Alle billetter</h2>
+<div id="kjopRegistrer"></div>
+<button onclick="slettAlle()">Slett alle billetter</button>
+</body>
+</html>
